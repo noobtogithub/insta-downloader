@@ -1,5 +1,11 @@
 const WORKER_URL = "https://insta-downloader.hirehubhrsolutions1.workers.dev";
 
+fetch(WORKER_URL, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ url: userEnteredUrl })
+})
+
 document.getElementById("downloadForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const status = document.getElementById("status");
